@@ -123,7 +123,7 @@ label {
   font-family: Arimo;
   background-color: rgba(0, 0, 0, 0.85);
   margin-top: 10%;
-  min-height: 2%;
+  min-height: 80px;
   max-height: 100%;
   width: 80%;
   position: relative;
@@ -137,6 +137,7 @@ label {
   overflow: hidden;
   left: 2%;
   top: 4px;
+  margin-bottom: 10px;
   position: relative;
   border: var(--border);
   background: hsla(0, 0%, 100%, .1);
@@ -144,11 +145,15 @@ label {
 }
 
 .item-attributes-section {
-  font-size: 10px;
+  font-size: 15px;
+  margin-left: 15px;
+  text-align: left;
+  position: relative;
 }
 
 .item-req {
-  border-bottom: 1px solid rgba(0,0,0,.5);
+  border-top: 1px solid rgba(255,255,255,.5);
+  border-bottom: 1px solid rgba(255,255,255,.5);
 }
 
 

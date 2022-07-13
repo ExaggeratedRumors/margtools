@@ -1,3 +1,15 @@
+<!--TO DO:-->
+<!-- - checkboxy profesji-->
+<!-- - wybór typu przedmiotu-->
+<!-- - wybór jakości przedmiotu-->
+<!-- - obliczanie liczby bonusów-->
+<!-- - czerwone pole jak się przekroczy bonusy-->
+<!-- - obliczanie bonusów-->
+<!-- - wstawki w tipach-->
+<!-- - obliczanie obrażeń-->
+<!-- - bonusy legendarne-->
+<!-- - ulepszanie przedmiotu-->
+
 <form [formGroup]="userForm">
   <div class="container">
     <div class="row justify-content-center">
@@ -36,15 +48,21 @@
           <div class="item-name-section">
             Testowy przedmiot
           </div>
-          <div class="item-attributes-section" *ngFor="let entry of attributes | keyvalue">
-            {{entry.key}}: {{entry.value}}
+          <div class="item-attributes-section" *ngFor="let entry of create_attr_list()">
+            {{entry.valueOf()}}
+          </div>
+          <div class="item-req">
+            Dostępne dla:
+          </div>
+          <div>
+            Poziom:
           </div>
         </div>
       </div>
       <div class="grid-container col-md-8">
         <div class="grid-element">
           <label for="da">Wszystkie cechy</label>
-          <input id="da" formControlName="da" type="number" value="1" min="0" max="5">
+          <input id="da" formControlName="da" type="number" value="0" min="0" max="5">
         </div>
         <div class="grid-element">
           <label for="hp">Życie</label>
@@ -57,7 +75,7 @@
 
         <div class="grid-element">
           <label for="ds">Siła</label>
-          <input id="ds" formControlName="ds" type="number" value="2" min="0" max="5">
+          <input id="ds" formControlName="ds" type="number" value="0" min="0" max="5">
         </div>
         <div class="grid-element">
           <label for="heal">Leczenie</label>
@@ -70,7 +88,7 @@
 
         <div class="grid-element">
           <label for="di">Intelekt</label>
-          <input id="di" formControlName="di" type="number" value="3" min="0" max="5">
+          <input id="di" formControlName="di" type="number" value="0" min="0" max="5">
         </div>
         <div class="grid-element">
           <label for="ac">Pancerz</label>
@@ -104,7 +122,7 @@
         </div>
         <div class="grid-element">
           <label for="acdmg">Niszcz. pancerza</label>
-          <input id="acdmg" formControlName="acdmg" type="number" value="0" min="0" max="4">
+          <input id="acdmg" formControlName="acdmg" type="number" value="0" min="0" max="5">
         </div>
 
         <div class="grid-element">
@@ -117,7 +135,7 @@
         </div>
         <div class="grid-element">
           <label for="acmdmg">Niszcz. odporności</label>
-          <input id="acmdmg" formControlName="acmdmg" type="number" value="0" min="0" max="4">
+          <input id="acmdmg" formControlName="acmdmg" type="number" value="0" min="0" max="5">
         </div>
 
         <div class="grid-element">

@@ -97,13 +97,14 @@ export class ItemCalcComponent implements OnInit {
     ["wound_damage", "0"],
   ]);
 
-  output = ["test1", "test2", "test3"]
   rarity: string = 'common';
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private renderer: Renderer2,
-  ) {}
+  ) {
+    this.init_attributes();
+  }
 
   init_attributes(): void {
     Object.keys(this.userForm.controls).forEach((key) => {
@@ -119,6 +120,15 @@ export class ItemCalcComponent implements OnInit {
     return counter;
   }
 
+  create_attr_list(): string[] {
+    let output : string[] = [];
+    Object.keys(this.userForm.controls).forEach((key) => {
+      if(this.userForm.get(key)?.value != 0)
+        output.push(key + " " + this.userForm.get(key)?.value);
+    });
+    return output;
+  }
+
 
   ngOnInit(): void {
     const r = localStorage.getItem('rarity');
@@ -126,7 +136,6 @@ export class ItemCalcComponent implements OnInit {
       this.rarity = r;
       document.body.className = r;
     }
-    this.init_attributes()
     this.init();
   }
 
