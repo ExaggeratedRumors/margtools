@@ -1,4 +1,4 @@
-# Item Calculator
+# MargTools
 
 Single-page application which is a item-calculator for popular website game.
 
